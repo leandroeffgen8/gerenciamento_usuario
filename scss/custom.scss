@@ -1,0 +1,388 @@
+@import 'variables';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body{
+    background: url('../images/bg.png') repeat top left;
+    font-family: $font-primary;
+    font-size: 1rem; 
+}
+
+.hide{
+    display: none !important;
+}
+
+ul{
+    margin: 0; 
+    padding: 0;
+    list-style: none;
+}
+
+img{
+    width: 100%;
+}
+
+input:focus,
+select:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+input:not(#inputFile):not(#inputGeneroF):not(#inputGeneroM):not(#ck),
+select{
+    border: 1px solid $border-color;
+    padding: 0.6rem 0.5rem;
+    width: 100%;
+}
+
+.container-fluid{
+    padding: 1rem;
+}
+
+.content-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    .header-title{
+        display: flex;
+        align-items: center;
+
+        strong{
+            font-size: 1.8rem;
+            color: $primary-color;
+            font-weight: normal;
+        }
+
+        span{
+            padding: 0 0.6rem;
+            font-size: 1.2rem;
+            color: $secondary-color;
+        }
+    }
+
+    .header-breadcrumb ul{
+        display: flex;
+        gap: 10px;
+
+        li{
+            a{
+                text-decoration: none;
+                color: $secondary-color;
+            }
+        }
+
+        li.ico-home:before{
+            content: '\f015';
+            @include fontAwesome;
+            padding-right: 0.6rem;
+            color: $secondary-color;
+        }
+
+        li:after{
+            content: '\f105';
+            @include fontAwesome;
+            padding: 0.2rem 0 0 0.6rem;
+        }
+
+        li:last-child:after{
+            content:'';
+        }
+    }
+}
+
+/*MAIN*/
+.collumn{
+    display: flex;
+    justify-content: space-between;
+}
+
+.col-right{
+    .show-user{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        gap: 5px;
+
+        .users{
+            padding: 2rem;
+            color: $color-box;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            .qtda{
+                font-size: 3rem;
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        .new-user{
+            background: $primary-background;
+
+            &:before{
+                content: '\f0c0';
+            }
+        }
+
+        .new-admin{
+            background: $second-background;
+
+            &:before{
+                content: '\f509';
+            }
+        }
+
+        .new-user,
+        .new-admin{
+            &:before{
+                @include fontAwesome;
+                font-size: 6rem;
+                position: absolute;
+                top: 0;
+                right: 1rem;
+                opacity: 0.1;
+                color: $secondary-color;
+            }
+        }
+    }
+
+    .include-user{
+        border-top: 2px solid $border-box;
+        border-radius: 2px 2px 0 0;
+        background-color: #FFF;
+        padding: 1rem;
+
+        h2{
+            color: $primary-color;
+            border-bottom: 1px solid $border-color;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group{
+            margin-bottom: 1rem;
+            &.flex-photo{
+                display: flex;
+                flex-direction: column;
+            }
+            > label{
+                margin-bottom: 0.6rem;
+                display: block;
+                color: $primary-color;
+                font-weight: bold;
+            }
+
+            .radio{
+                margin-bottom: 0.5rem;
+                label{
+                    font-size: 0.85rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                }
+            }
+
+            #imagemExibicao{
+                width: 50px;
+                height: 50px;
+                margin-top: 1rem;
+                border-radius: 50%;
+            }
+        }
+
+        .checkbox{
+            label{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                font-size: 0.85rem;
+            }
+        }
+
+        .box-btn{
+            margin-block: 1rem;
+            
+            .btn{
+                background: $primary-background;
+                border: 0;
+                color: $color-box;
+                padding: 0.5rem 1rem;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+        }
+
+        &.editar{
+            background:rgba(93, 202, 108, 0.3);
+        }
+    }
+} 
+
+.col-center{
+    width: 68%;
+    height: 100%;
+    .grid-register{
+        background: $color-box;
+        margin: 0 2rem 0 0;
+        padding: 1rem;
+        border-top: 3px solid $border-box-center;
+        border-radius: 6px 6px 0 0;
+    }
+    .grid-list{
+        h2{
+            color: $primary-color;
+            font-weight: normal;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            &.title{
+                text-align: center;
+                padding-block: 1rem;
+                margin: 1rem 0 0;
+                font-weight: bold;
+            }
+        }
+        .list{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 1rem 0;
+            padding: 0;
+            list-style: none;
+            
+            li,
+            li span{
+                width: 100%;
+            } 
+            .email{
+                white-space: nowrap;
+                width: 54em;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }           
+        }
+
+        .grid-title{
+            border-bottom: 1px solid $border-color;
+            padding-bottom: 1rem;
+            margin-bottom: 0;
+        }
+
+        .grid-line{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            margin: 0;
+            li{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 20px;
+                border-bottom: 1px solid $border-color;
+                padding: 0.6rem;
+                position: relative;
+             
+                &:nth-child(2n+1){
+                    background: $line-odd;
+                }
+                span{
+                    img{
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                    }
+                }
+
+                .btns{
+                    display: flex;
+                    gap: 5px;
+                }
+
+                .btn-user{
+                    border: 0;
+                    color: $color-box;
+                    padding: 0.4rem 0.5rem;
+                    cursor: pointer;
+                    transition: 0.3s;
+                    &.btn-editar{
+                        background-color: $btn-editar;
+                    }
+                    &.btn-excluir{
+                        background-color: $btn-excluir;
+                    }
+
+                    &:hover{
+                        opacity: 0.8;
+                    }
+                }
+
+                .aniversario{
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                    width: auto;
+                    cursor: pointer;
+                    &:before{
+                        content:'\f06b';
+                        @include fontAwesome;
+                        font-size: 0.55rem;
+                        background: $btn-excluir;
+                        font-size: .55rem;
+                        color: #fff;
+                        padding: 0.3rem;
+                        border-radius: 25px;
+                    }
+                }
+            }
+        }
+    }
+
+    .container-bullets {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        margin-block: 2rem;
+        li{
+            margin: 0 0.3rem;
+            padding: 0.3rem 0.8rem;
+            background: $btn-editar;
+            color: #FFF;
+            cursor: pointer;
+        }
+    }
+    
+}
+
+@media(max-width:1000px){
+    .collumn{
+        flex-direction: column;
+    }
+
+    .col-center{
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .col-right .show-user{
+        justify-content: flex-end;
+    }
+}
+
+.swal2-confirm.swal2-styled{
+    background: $border-box;
+}
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+$font-primary: 'Lato', sans-serif;
+$font-second: 'Dancing Script', cursive;
+ 
+$primary-color:#222;
+$secondary-color: #666;
+
+$primary-background: rgb(0, 166, 90);
+$second-background: rgb(243, 156, 18);
+
+$color-box: #FFF;
+
+$border-box: rgb(0, 166, 90);
+$border-box-center: #d2d6de;
+$border-color:#f5efef;
+
+$line-odd: #f9f9f9;
+
+$btn-editar:#3c8dbc;
+$btn-excluir: #dd4b39;
+
+@mixin fontAwesome{
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
